@@ -36,7 +36,7 @@ public class AdminList extends AdministrationSectionExt {
 	 * @see AdministrationSectionExt#getTitle()
 	 */
 	public String getTitle() {
-		return "conceptname.title";
+		return "Concept Name Management";
 	}
 	
 	/**
@@ -44,7 +44,7 @@ public class AdminList extends AdministrationSectionExt {
 	 */
 	public Map<String, String> getLinks() {
 		LinkedHashMap<String, String> map = new LinkedHashMap<String, String>();
-		map.put("/module/conceptname/manage.form", "conceptname.manage");
+		map.put("/module/conceptname/viewConceptNames.form", "conceptname.manage");
 		return map;
 	}
 	

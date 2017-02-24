@@ -13,13 +13,20 @@
  */
 package org.openmrs.module.conceptname.web.controller;
 
+import org.openmrs.Concept;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.openmrs.api.context.Context;
+// import org.openmrs.api.context.Context;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
+// import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import org.springframework.web.bind.annotation.ModelAttribute;
+// org.springframework.web.bind.annotation.RequestMapping;
+// org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 /**
  * The main controller.
@@ -29,8 +36,14 @@ public class  ConceptNameManageController {
 	
 	protected final Log log = LogFactory.getLog(getClass());
 	
-	@RequestMapping(value = "/module/conceptname/manage", method = RequestMethod.GET)
-	public void manage(ModelMap model) {
-		model.addAttribute("user", Context.getAuthenticatedUser());
+	@ModelAttribute
+	public Concept getConcept(@RequestParam (required=false, value="conceptId") Concept concept ){
+	return concept;	
+		
+	}
+	
+	@RequestMapping(value = "/module/conceptname/viewConceptNames", method = RequestMethod.GET)
+	public void showForm(){
+		
 	}
 }
